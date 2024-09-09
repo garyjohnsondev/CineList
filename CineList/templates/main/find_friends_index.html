@@ -1,0 +1,47 @@
+{% extends 'base_frontend.html' %}
+{% load static %}
+{% load get_open_requests %}
+
+{% block title %} <title>Find Friend</title> {% endblock %}
+
+{% block content %}
+	<div class="main-content">
+		{% with user|get_open_requests as open_requests %}
+			<div class="open-requests alert alert-success w-50 float-right">
+				You have friend requests from:
+				<br>
+				{% for friend_request in open_requests %}
+				<div class="friend-request row" style="margin: 10px">
+					<a href="{% url 'view_profile' other_id=friend_request.sender.id %}" class="alert-link col-sm-4">{{ friend_request.sender.get_full_name }}</a>
+					<a class="btn btn-info btn-sm col-sm-2" href="{% url 'request_accepted' other_id=friend_request.sender.id %}"> Accept </a>&nbsp;
+					<a class="btn btn-secondary btn-sm col-sm-2" href="{% url 'request_cancelled' other_id=friend_request.sender.id %}"> Deny </a>
+					<br>
+				</div>
+
+				{% endfor %}
+			</div>
+		{% endwith %}
+        {% with  user|get_open_sent_requests as open_sent_requests %}
+            <div class="open-requests alert alert-success w-50 float-right">
+                You have sent friend requests to:
+                <br>
+                {% for friend_request in open_sent_requests %}
+				<div class="friend-request row" style="margin: 10px">
+					<a href="{% url 'view_profile' other_id=friend_request.receiver.id %}" class="alert-link col-sm-4">{{ friend_request.receiver.get_full_name }}</a>
+					<a class="btn btn-secondary btn-sm col-sm-2" href="{% url 'request_cancelled' other_id=friend_request.receiver.id %}"> Cancel </a>
+					<br>
+				</div>
+
+				{% endfor %}
+            </div>
+        {% endwith %}
+		<h1>Search for friends</h1>
+	    <form action="{% url 'find_friend_results' %}" method="GET">
+			{% csrf_token %}
+			<p class="form-group row">
+				<input class="form-control col-sm-5" id="keywords" name="keywords" type="text" /> &nbsp;
+				<input class="btn btn-sm btn-primary" type="submit" value="Search">
+			</p>
+	    </form>
+	</div>
+{% endblock %}

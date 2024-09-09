@@ -1,0 +1,40 @@
+{% extends 'user/profile.html' %}
+{% load static %}
+{% load email_helper %}
+
+{% block title %}
+    <title>Messages</title>
+{% endblock %}
+
+{% block page_content %}
+    <div class="container-flex">
+        <h1>Messages</h1>
+        <table class="messages-table">
+            <tbody>
+                {% for email in email_messages %}
+                    <tr>
+                        <td scope="col-sm-2" class="">
+                            <div class="card card-body">
+                                {{ email.date_sent }}
+                            </div>
+                        </td>
+                        <td scope="col-sm-10">
+                            <div class="card">
+                                <div class="card-header">
+                                        <span class="font-weight-bold">{{ email.subject }}</span>
+                                        <span class="float-right">To: {{ email.to }}</span>
+                                </div>
+                                <div class="card-body">
+                                    {% autoescape off %}{{ email.body|br_replace }}{% endautoescape %}
+                                </div>
+                                <div class="card-footer">
+                                    From:  {{ email.from_email }}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

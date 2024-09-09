@@ -1,0 +1,28 @@
+{% load static %}
+{% load parse_date %}
+<table class="table table-bordered table-striped small">
+    <thead>
+        <tr>
+            <th>Borrow Date</th>
+            <th>Movie</th>
+            <th>Borrow Duration</th>
+            <th>Due Date</th>
+            {% if borrow.sender is user.id %}
+                <th>Actions</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for borrow in upcomming %}
+            <tr>
+                <td>{{ borrow.start_date }}</td>
+                <td><img src="{{ borrow.movie.imageLink }}" alt="{{ borrow.movie.title }}" style="width: 93px"></td>
+                <td>{{ borrow.borrow_duration }} day(s)</td>
+                <td>{{ borrow.start_date|get_due_date:borrow.borrow_duration }}</td>
+                {% if borrow.sender is user %}
+                    <td><a class="btn btn-sm btn-outline-danger small" href="{% url 'update_borrow_request' borrow_request_id=borrow.id %}">Cancel</a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

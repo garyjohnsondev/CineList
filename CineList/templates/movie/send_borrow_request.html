@@ -1,0 +1,71 @@
+{% extends 'base_frontend.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load library_helper %}
+
+{% block title %}
+    <title>New Borrow Request</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container-flex main-content mt-5">
+        <div class="row">
+            <div class="col-3">
+                <div class="card-header move-to-center">
+                    <img class="search-result-image card-img-top" src="{{ movie.imageLink }}" style="width: 154px">
+                </div>
+                <div class="card-body search-results-card">
+                    <a class="card-title text-info font-weight-bold" href="{{ movie.tmdbLink }}" target="_blank">{{ movie.title }}</a>
+                    <div class="row">
+                        <div class="small col-sm-7 font-weight-bold">{{ movie.releaseDate|date:"Y" }}</div>
+                        <span class="badge badge-success badge-pill align-self-center float-right col-sm-3">{{ movie.rating }}</span>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="overflow-auto card-text text-dark">{{ movie.description|truncatewords:60}}</div>
+                        <div class="text-dark mt-3">This is <a href="{% url 'view_profile' other_id=movie.user.id %}">{{ movie.user }}'s</a> movie.</div>
+                        <span class="font-weight-normal">{{ movie.borrow_status | availabilty_formatter }} now</span>
+                        <div class="font-weight-bold text-dark">Max borrow duration: {{ movie.preferences.data.borrow_duration }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 card">
+                <form action="{% url 'send_borrow_request' movie_id=movie.id %}" method="post" id="send-borrow-request" class="form card-body">
+                    {% csrf_token %}
+                            <h4>Borrow Request</h4>
+                            {{ borrow_request_form.media }}
+                            {% for field in borrow_request_form %}
+                                {% if field.name == 'start_date' %}
+                                    <div class="form-group">
+                                        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                            <input type="text" name="start_date" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="form-group">
+                                        {{ field|as_crispy_field }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                    <a href="{{ http_referer }}"class="btn btn-secondary">Cancel</a>
+                    <input type="submit" class="btn btn-primary" value="Send" />
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'L'
+            });
+        });
+    </script>
+{% endblock %}

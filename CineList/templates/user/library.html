@@ -1,0 +1,79 @@
+{% extends 'user/profile.html' %}
+{% load static %}
+{% load api_helper %}
+{% load library_helper %}
+
+{% block title %}
+    <title>Library</title>
+{% endblock %}
+
+{% block page_content %}
+     <div class="user-library">
+         <div class="container-flex">
+             <div class="row">
+                 <h1 class="col-sm-6">Your Library</h1>
+                 <div class="col-sm-3 mr-sm-2">
+                 {% if alert %}
+                    <div id="action-alert" class="alert alert-dismissable {{alert.type}} align-self-center" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <p class="font-weight-light">{{alert.message}}</p> {% if alert.link %}<a class="alert-link" href="{% url alert.link %}">{{ alert.link_message }}</a>{% endif %}
+                    </div>
+                 {% endif %}
+             </div>
+            <form class="inline-form ml-auto mr-2" action="{% url 'api_results' %}" method="GET">
+                <div class="form-group row">
+                    <input style="display: none" type="text" name="page" id="page" value="1">
+                    <input type="text" class="form-control mr-sm-2 col-sm-8" id="query" placeholder="Add a title..." name="query"/>
+                    <button type="submit" class="btn btn-sm btn-primary">Search</button>
+                </div>
+            </form>
+             </div>
+             <table class="table table-hover">
+                 <thead>
+                     <tr>
+                         <th scope="col" style="width: 12%">Poster</th>
+                         <th scope="col" style="width: 18%">Title (Year)</th>
+                         <th scope="col" style="width: 20%">Overview</th>
+                         <th scope="col" style="width: 12%">Genres</th>
+                         <th scope="col">Format</th>
+                         <th scope="col" style="width: 10%">Status</th>
+                         {% if other_user == current_user %}
+                            <th scope="col" style="width: 15%">Actions</th>
+                         {% endif %}
+                     </tr>
+                 </thead>
+                 <tbody>
+                     {% for movie in movies %}
+                      <tr>
+                          <td scope="col"><img src="{{ movie.imageLink }}" style="width: 92px"/></td>
+                          <th scope="row"><a class="font-weight-bold text-info" href="{{ movie.tmdbLink }}" target="_blank">{{ movie.title }} ({{ movie.releaseDate|date:"Y" }})</a></th>
+                          <td class="text-muted font-weight-light small">{{ movie.description|truncatewords:45 }}</td>
+                          <td class="small">{{ movie.genres|join:", " }}</td>
+                          <td>
+                              <span id="movie-format-{{movie.id}}">{{ movie.format|media_formatter}}</span>
+                              <div id="hidden-edit-movie-{{movie.id}}" style="display: none">
+  								{% include 'movie/edit_details.html'%}
+			                  </div>
+                          </td>
+                          <td>{{ movie.status|status_formatter }}</td>
+                          {% if other_user == current_user %}
+                              <td>
+                                  <button class="btn btn-secondary btn-sm" onclick="getElementById('hidden-edit-movie-'+{{ movie.id }}).style.display = 'block'; getElementById('movie-format-'+{{ movie.id }}).style.display = 'none'">Edit Info</button>
+                                  <a class="btn btn-sm btn-warning" href="{% url 'delete_movie' other_id=user.id movie_id=movie.id %}">Remove</a>
+                              </td>
+                          {%endif%}
+                      </tr>
+                     {% endfor %}
+                 </tbody>
+             </table>
+             {% if movies|length == 0 %}
+                 <div class="nothing-here move-to-center" style="margin-top: 100px">
+                     <h5>There's nothing here!</h5>
+                     <a class="btn btn-warning" href="{% url 'api_index' %}">Search for movies you own</a>
+                 </div>
+             {% endif %}
+         </div>
+     </div>
+{% endblock %}

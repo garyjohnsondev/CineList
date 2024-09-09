@@ -1,0 +1,11 @@
+<form class="form" action="{% url 'edit_movie' other_id=user.id movie_id=movie.id %}" method="POST">
+    {% csrf_token %}
+    <select id="format-select-{{movie.id}}" class="select form-control" name="format">
+        <option value="V">VHS</option>
+        <option value="D" selected>DVD</option>
+        <option value="B">Blu-ray</option>
+        <option value="K">4K UHD</option>
+    </select>
+    <br>
+    <input class="btn btn-sm btn-block btn-info"type="submit" name="submit" value="Save" onclick="getElementById('movie-format-'+{{ movie.id }}).style.display = 'block'">
+</form>

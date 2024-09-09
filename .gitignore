@@ -1,0 +1,12 @@
+*.pyc
+*.iml
+/main/__pycache__
+/cinelist/__pycache__
+*/__pycache__/*
+*/__pycache__/*.pyc
+*.cpython
+*.cypthon-37
+*.cpython-37.pyc
+*.cpython.*
+*.DS_Store
+CineList/main/migrations/*

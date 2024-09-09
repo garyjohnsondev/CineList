@@ -1,0 +1,116 @@
+<div class="borrow-status-cards row">
+    <div class="col status-card">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-light borrowing-header">
+                <h5 class="borrowing-title font-weight-light">Titles you're borrowing</h5>
+                <a class="btn btn-warning float-right" href="{% url 'search' %}">Find movies</a>
+            </div>
+            <div class="card-body">
+                {% if borrows|length is not 0 %}
+                    {% with borrows as upcomming %}
+                        {% include 'movie/list_upcoming_borrows.html' %}
+                    {% endwith %}
+                {% endif %}
+                {% if sent_requests|length > 0 %}
+                    <div class="borrow-request">
+                        <div class="alert">
+                            <b>Your borrow request(s) have been sent and are awaiting approval.</b>
+                            {% for borrow_request in sent_requests %}
+                                <div class="card mt-3">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-3">
+                                            <img class="card-img" src="{{ borrow_request.movie.imageLink }}" style="width: 115px">
+                                        </div>
+                                        <div class="col">
+                                            <div class="card-body pl-0">
+                                                <div class="row no-gutters text-dark font-weight-bold">{{ borrow_request.movie.title }}</div>
+                                                <div class="row no-gutters">
+                                                    Owner: <a class="text-info ml-sm-2" href="{% url 'view_profile' other_id=borrow_request.receiver.id %}">{{ borrow_request.movie.user.get_full_name }}</a>
+                                                </div>
+                                                <div class="row no-gutters">Start date: {{ borrow_request.start_date|date:'m/d/Y' }}</div>
+                                                <div class="row no-gutters">Duration: {{ borrow_request.borrow_duration }} day(s)</div>
+                                                {% if borrow_request.notes %}
+                                                    <div class="row no-gutters">
+                                                        {{ borrow_request.notes }}
+                                                    </div>
+                                                {% endif %}
+                                                <div class="float-right">
+                                                    {% include 'movie/update_borrow_request.html' %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if not borrows and not sent_requests %}
+                    <p>You are not currently borrowing any titles.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col status-card">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-light">
+                <h5 class="font-weight-light">Titles being borrowed from you</h5>
+            </div>
+
+            <div class="card-body">
+                {% if library_count == 0 %}
+                    <div id="no-library-titles" class="alert alert-success alert-dismissable" role="alert">
+                            <h6 class="alert-heading">There are no titles in your library.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </h6>
+                        CineList only works if people share what movies they own so that their friends can borrow them. Why not <a class="alert-link" href="{% url 'api_index' %}">add a few?</a>
+                    </div>
+                {% endif %}
+                {% if loans|length is not 0 %}
+                    {% with loans as upcomming %}
+                        {% include 'movie/list_upcoming_borrows.html' %}
+                    {% endwith %}
+                {% endif %}
+                {% if received_requests|length > 0 %}
+                    <div class="borrow-request">
+                        <div class="alert">
+                            <b>Pending borrow requests: </b>
+                            {% for borrow_request in received_requests %}
+                                <div class="card mt-3">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-3">
+                                            <img class="card-img" src="{{ borrow_request.movie.imageLink }}" style="width: 115px">
+                                        </div>
+                                        <div class="col">
+                                            <div class="card-body pl-0">
+                                                <div class="row no-gutters text-dark font-weight-bold mb-1">{{ borrow_request.movie.title }}</div>
+                                                <div class="row no-gutters">
+                                                    From: <a class="text-info font-weight-bold ml-sm-2" href="{% url 'view_profile' other_id=borrow_request.sender.id %}"> {{ borrow_request.sender.get_full_name }}</a>
+                                                </div>
+                                                <div class="row no-gutters">Start date:  {{ borrow_request.start_date|date:'m/d/Y' }}</div>
+                                                <div class="row no-gutters">Duration:  {{ borrow_request.borrow_duration }} day(s)</div>
+                                                {% if borrow_request.notes %}
+                                                    <div class="row no-gutters">
+                                                        {{ borrow_request.notes }}
+                                                    </div>
+                                                {% endif %}
+                                                <div class="float-right">
+                                                    {% include 'movie/update_borrow_request.html' %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if not loans and not received_requests %}
+                    <p>You are not currently loaning any titles.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

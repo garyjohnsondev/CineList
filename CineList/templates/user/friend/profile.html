@@ -1,0 +1,50 @@
+{% extends "base_frontend.html" %}
+{% load static %}
+{% load parse_phone_number %}
+
+{% block title %} <title> {{ other_user.get_full_name }} </title> {% endblock %}
+
+{% block content %}
+	<div class="main-content mb-5">
+			<div class="row">
+				<div class="col-6 ml-3 mb-4">
+					<div class="card text-dark">
+						<div class="card-body">
+							<h4 class="display-4"> {{ other_user.get_full_name }} </h4>
+							<h6 class="font-weight-light text-muted ml-2">{{ other_user.username }}</h6>
+							<div class="card-body small p-0 m-0 mt-4 borderless">
+								<table style="border-collapse:separate;border-spacing:8px;">
+									<tbody>
+										<tr><th>Email</th><td>{{ other_user.email }}</td></tr>
+										<tr><th>Phone Number</th>
+											{% if other_user.phone_number %}
+												<td>{{ other_user.phone_number|phone_number }}</td>
+											{% endif %}
+										</tr>
+										<tr><th>Address</th><td>{{ other_user.address }}</td> </tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<a class="btn btn-info btn-block" href="{% url 'library' other_id=other_user.id %}""> View {{ other_user.first_name }}'s library </a>
+					<a class="btn btn-warning btn-block mb-5" href="{% url 'remove_friend' other_id=other_user.id %}"> Remove Friend </a>
+				</div>
+			</div>
+			{% with other_user.friends_list.all as friends %}
+				<div class="col-6 mr-auto mb-5">
+					{% if other_user.friends_list.count > 0 %}
+						<div class="card mt-auto shadow-sm mb-5" style="max-height: 30rem; overflow:scroll">
+							<div class="card-body">
+								<h5>Friends</h5>
+								{% include 'user/friend/friends_list.html' %}
+							</div>
+						</div>
+					{% endif %}
+				</div>
+			{% endwith %}
+			<br />
+	</div>
+{% endblock %}

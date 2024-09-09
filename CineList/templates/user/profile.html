@@ -1,0 +1,78 @@
+{% extends "base_frontend.html" %}
+{% load static %}
+{% load parse_phone_number %}
+
+{% block title %} <title> {{ user.first_name }} </title> {% endblock %}
+
+{% block content %}
+	<main class="container-fluid">
+		<main class="row">
+			<nav class="col-md-1 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item mt-3">
+							<a class="nav-link active" href="{% url 'profile' %}">Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'messages' %}">Messages</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'library' other_id=user.id%}">Library</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'list_friends' %}">Friends</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'set_user_preferences' %}">Preferences</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'edit_profile' %}">Account Settings</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<main role="main" class="col-md-11 ml-auto col-lg-11 pt-3" style="height:calc(100vh - 48px)">
+				{% block page_content %}
+					<div class="container-flex  profile-content">
+						<div class="row">
+							<div class="col-6 ml-3 mr-auto" style="max-width:35rem;">
+								<div class="card text-dark">
+									<div class="card-body">
+										<h4 class="display-4"> {{ user.get_full_name }} </h4>
+										<h6 class="font-weight-light text-muted ml-2">{{ user.username }}</h6>
+										<div class="card-body small p-0 m-0 mt-4 borderless">
+											<table style="border-collapse:separate;border-spacing:8px;">
+												<tbody>
+													<tr><th>Email</th><td>{{ user.email }}</td></tr>
+													<tr><th>Phone Number</th>
+														{% if user.phone_number %}
+															<td>{{ user.phone_number|phone_number }}</td>
+														{% endif %}
+													</tr>
+													<tr><th>Address</th><td>{{ user.address }}</td> </tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								{% if user.friends_list.count > 0 %}
+									<div class="card mt-auto shadow-sm" style="max-height: 30rem; overflow:scroll">
+										<div class="card-body">
+											<h5>Your Friends</h5>
+											{% include 'user/friend/friends_list.html' %}
+										</div>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+						<div class="mt-4">
+							{% include 'movie/borrow_status_cards.html'%}
+						</div>
+					</div>
+				{% endblock %}
+			</main>
+		</main>
+	</main>
+{% endblock %}

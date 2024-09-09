@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+	<div class="container-flex main-content mt-auto justify-content-around">
+		{% if form.errors %}
+			<p>Your username and password didn't match. Please try again.</p>
+		{% endif %}
+
+		{% if next %}
+			{% if user.is_authenticated %}
+				<p>Your account doesn't have access to this page. To proceed,
+				please login with an account that has access.</p>
+			{% else %}
+				<p>Please login to see this page.</p>
+			{% endif %}
+		{% endif %}
+		<div class="card-login card ml-auto mr-auto mt-5">
+			<div class="card-body">
+				<div class="card-title h5">Login</div>
+				<form method="post" action="{% url 'login' %}" novalidate>
+					{% csrf_token %}
+					{{ form|crispy }}
+					<div class="row">
+						<div class="col-sm-3">
+							<button class="btn btn-warning" type="submit" value="login">Login</button>
+							<input type="hidden" name="next" value="{{ next }}" />
+						</div>
+						<div class="col">
+							{# Assumes you setup the password_reset view in your URLconf #}
+							<p><a href="{% url 'password_reset' %}" class="btn btn-outline-secondary">Forgot password?</a></p>
+						</div>
+					</div>
+				</form>
+				<br>
+				<a href="{% url 'create_account'  %}" class="card-link text-info">Don't have an account? Click here to sign up.</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

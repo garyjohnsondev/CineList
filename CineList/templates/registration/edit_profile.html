@@ -1,0 +1,40 @@
+{% extends 'user/profile.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+	<title> Edit Account </title>
+{% endblock %}
+
+{% block page_content %}
+    <div class="main-content">
+		{% if alert %}
+			<div id="add-title-alert"class="alert alert-dismissable {{ alert.type }} float-right" style="width: 20rem" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+				<p class="font-weight-light">{{alert.message}}</p> {% if alert.link %}<a class="alert-link" href="{% url alert.link %}">{{ alert.link_message }}</a>{% endif %}
+			</div>
+		{% endif %}
+        <div class="card mb-5" style="width:45rem">
+			<div class="card-header">
+				<h2>Edit Account</h2>
+			</div>
+			<form method="post">
+				<div class="card-body">
+					{% csrf_token %}
+					{% for field in form %}
+					  {% if field.name != 'password' %}
+						  {{ field|as_crispy_field }}
+					  {% endif %}
+					{% endfor %}
+					<a href="{% url 'change_password' %}" class="btn btn-secondary btn-block align-self-center ml-auto mr-auto" style="width:20rem">Change password</a>
+	  			</div>
+				<div class="card-footer">
+					<button type="submit" class="btn btn-warning">Apply Changes</button>
+				</div>
+  			</form>
+
+  </div>
+  <br>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base_frontend.html' %}
+{% load static %}
+
+{% block title %} <title>Results</title> {% endblock %}
+
+{% block content %}
+	<div class="main-content">
+		<h1>Find Friends Search Results:</h1>
+		{% if users %}
+			{% for user in users %}
+				<div class="card w-75">
+					<div class="card-header">
+                        {% if user == this_user %}
+                            <a href={% url 'profile' %} > {{ user.get_full_name }} (You) </a>
+                        {% else %}
+						    <a href={% url 'view_profile' other_id=user.id %} > {{ user.get_full_name }} </a>
+                        {% endif %}
+					</div>
+					<div class="card-body"></div>
+				</div>
+				<br>
+			{% endfor %}
+		{% else %}
+			<p>No results matched your search.</p>
+			<a href="{% url 'find_friend_index' %}"> Search again? </a>
+		{% endif %}
+	</div>
+{% endblock %}

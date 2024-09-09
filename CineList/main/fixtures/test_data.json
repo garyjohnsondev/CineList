@@ -1,0 +1,1888 @@
+[
+  {
+    "model": "main.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$mbbhLZQB7UV7$KRgVQ33zoEoR6AtpZJWhZfVtGT8Ng1sKz7Am/5JHfQs=",
+      "last_login": "2019-03-30T02:39:32.586Z",
+      "is_superuser": true,
+      "username": "demo_superuser",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-03-19T17:16:54.201Z",
+      "first_name": "Demo",
+      "last_name": "Superuser",
+      "email": "demo.superuser@cinelist.io",
+      "phone_number": "",
+      "groups": [],
+      "user_permissions": [],
+      "friends_list": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "model": "main.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$aJRD0v2WVBEB$PdxVQEZgjL8ByHCThNh30JN1K7O2JelpXjWljPCu+KQ=",
+      "last_login": "2019-03-30T02:31:55.263Z",
+      "is_superuser": false,
+      "username": "richard.clark65",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-03-19T17:24:00.754Z",
+      "first_name": "Richard",
+      "last_name": "Clark",
+      "email": "richard.clark65@example.com",
+      "phone_number": "1621403620",
+      "groups": [],
+      "user_permissions": [],
+      "friends_list": [
+        1,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "main.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$YuyH1NGyBUje$W4xsZata60dF60koJ4wn2tC4H9xXI3+9e2ygXbj7BvU=",
+      "last_login": "2019-03-30T02:40:09.658Z",
+      "is_superuser": false,
+      "username": "brandongeorge",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-03-19T17:30:08.341Z",
+      "first_name": "Brandon",
+      "last_name": "George",
+      "email": "brandon.george34@example.com",
+      "phone_number": "7283563584",
+      "groups": [],
+      "user_permissions": [],
+      "friends_list": [
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "model": "main.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$mCATkCuhKmpg$h4CLn8S0f87pDX9YXKIlZweWQmlBjdmHJaFVNUBkaHM=",
+      "last_login": "2019-03-30T02:36:33.903Z",
+      "is_superuser": false,
+      "username": "marionws",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-03-19T18:13:53Z",
+      "first_name": "Marion",
+      "last_name": "Andrews",
+      "email": "marion.andrews41@example.com",
+      "phone_number": "1033497085",
+      "groups": [],
+      "user_permissions": [],
+      "friends_list": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "model": "main.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$9Fw68uiauKPy$9ZC33el4humtdY1q0dnGuK6vH2sKeE8sjVVvBkQ+WLU=",
+      "last_login": "2019-03-30T02:28:33.534Z",
+      "is_superuser": false,
+      "username": "tina",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-03-19T18:22:01.714Z",
+      "first_name": "Tina",
+      "last_name": "Marshall",
+      "email": "tina.marshall74@example.com",
+      "phone_number": "7641767033",
+      "groups": [],
+      "user_permissions": [],
+      "friends_list": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "model": "main.user",
+    "pk": 7,
+    "fields": {
+      "password": "nofriends",
+      "last_login": "2019-03-30T02:31:55.263Z",
+      "is_superuser": false,
+      "username": "demo_nofriends",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-03-19T17:24:00.754Z",
+      "first_name": "Demo",
+      "last_name": "Nofriends",
+      "email": "demo.nofriends@cinelist.io",
+      "phone_number": "1621403620",
+      "groups": [],
+      "user_permissions": [],
+      "friends_list": []
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "title": "Star Wars",
+      "tmdbId": 11,
+      "releaseDate": "1977-05-25",
+      "searchableReleaseDate": "1977-05-25",
+      "runtime": "02:01:00",
+      "description": "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//btTdmkgIvOi0FFip1sPuZI2oQG6.jpg",
+      "tmdbLink": "http://tmdb.org/movie/11",
+      "budget": 11000000,
+      "revenue": 775398007,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Action\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "title": "Return of the Jedi",
+      "tmdbId": 1892,
+      "releaseDate": "1983-05-23",
+      "searchableReleaseDate": "1983-05-23",
+      "runtime": "02:15:00",
+      "description": "As Rebel leaders map their strategy for an all-out attack on the Emperor's newer, bigger Death Star. Han Solo remains frozen in the cavernous desert fortress of Jabba the Hutt, the most loathsome outlaw in the universe, who is also keeping Princess Leia as a slave girl. Now a master of the Force, Luke Skywalker rescues his friends, but he cannot become a true Jedi Knight until he wages his own crucial battle against Darth Vader, who has sworn to win Luke over to the dark side of the Force.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//lrJWyjOVjPhghl4KyAMtOepAxs.jpg",
+      "tmdbLink": "http://tmdb.org/movie/1892",
+      "budget": 32350000,
+      "revenue": 572700000,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Action\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "title": "The Empire Strikes Back",
+      "tmdbId": 1891,
+      "releaseDate": "1980-05-20",
+      "searchableReleaseDate": "1980-05-20",
+      "runtime": "02:04:00",
+      "description": "The epic saga continues as Luke Skywalker, in hopes of defeating the evil Galactic Empire, learns the ways of the Jedi from aging master Yoda. But Darth Vader is more determined than ever to capture Luke. Meanwhile, rebel leader Princess Leia, cocky Han Solo, Chewbacca, and droids C-3PO and R2-D2 are thrown into various stages of capture, betrayal and despair.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//9SKDSFbaM6LuGqG1aPWN3wYGEyD.jpg",
+      "tmdbLink": "http://tmdb.org/movie/1891",
+      "budget": 18000000,
+      "revenue": 538400000,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Action\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "title": "Star Wars: Episode I - The Phantom Menace",
+      "tmdbId": 1893,
+      "releaseDate": "1999-05-19",
+      "searchableReleaseDate": "1999-05-19",
+      "runtime": "02:16:00",
+      "description": "Anakin Skywalker, a young slave strong with the Force, is discovered on Tatooine. Meanwhile, the evil Sith have returned, enacting their plot for revenge against the Jedi.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//n8V09dDc02KsSN6Q4hC2BX6hN8X.jpg",
+      "tmdbLink": "http://tmdb.org/movie/1893",
+      "budget": 115000000,
+      "revenue": 924317558,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Action\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "title": "Star Wars: Episode II - Attack of the Clones",
+      "tmdbId": 1894,
+      "releaseDate": "2002-05-15",
+      "searchableReleaseDate": "2002-05-15",
+      "runtime": "02:22:00",
+      "description": "Ten years after the invasion of Naboo, the galaxy is on the brink of civil war. Under the leadership of a renegade Jedi named Count Dooku, thousands of solar systems threaten to break away from the Galactic Republic. When an assassination attempt is made on Senator Padmé Amidala, the former Queen of Naboo, twenty-year-old Jedi apprentice Anakin Skywalker is assigned to protect her. In the course of his mission, Anakin discovers his love for Padmé as well as his own darker side. Soon, Anakin, Padmé, and Obi-Wan Kenobi are drawn into the heart of the Separatist movement and the beginning of the Clone Wars.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//2vcNFtrZXNwIcBgH5e2xXCmVR8t.jpg",
+      "tmdbLink": "http://tmdb.org/movie/1894",
+      "budget": 120000000,
+      "revenue": 649398328,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Action\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "title": "Star Wars: Episode III - Revenge of the Sith",
+      "tmdbId": 1895,
+      "releaseDate": "2005-05-17",
+      "searchableReleaseDate": "2005-05-17",
+      "runtime": "02:20:00",
+      "description": "Years after the onset of the Clone Wars, the noble Jedi Knights lead a massive clone army into a galaxy-wide battle against the Separatists. When the sinister Sith unveil a thousand-year-old plot to rule the galaxy, the Republic crumbles and from its ashes rises the evil Galactic Empire. Jedi hero Anakin Skywalker is seduced by the dark side of the Force to become the Emperor's new apprentice – Darth Vader. The Jedi are decimated, as Obi-Wan Kenobi and Jedi Master Yoda are forced into hiding. The only hope for the galaxy are Anakin's own offspring – the twin children born in secrecy who will grow up to become heroes.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//tgr5Pdy7ehZYBqBkN2K7Q02xgOb.jpg",
+      "tmdbLink": "http://tmdb.org/movie/1895",
+      "budget": 113000000,
+      "revenue": 850000000,
+      "rating": "PG-13",
+      "genres": "[\"Science Fiction\", \"Adventure\", \"Action\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "title": "Star Wars: The Force Awakens",
+      "tmdbId": 140607,
+      "releaseDate": "2015-12-15",
+      "searchableReleaseDate": "2015-12-15",
+      "runtime": "02:16:00",
+      "description": "Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//weUSwMdQIa3NaXVzwUoIIcAi85d.jpg",
+      "tmdbLink": "http://tmdb.org/movie/140607",
+      "budget": 245000000,
+      "revenue": 2068223624,
+      "rating": "PG-13",
+      "genres": "[\"Action\", \"Adventure\", \"Science Fiction\", \"Fantasy\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 8,
+    "fields": {
+      "user": 1,
+      "title": "Star Wars: The Last Jedi",
+      "tmdbId": 181808,
+      "releaseDate": "2017-12-13",
+      "searchableReleaseDate": "2017-12-13",
+      "runtime": "02:32:00",
+      "description": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      "tmdbLink": "http://tmdb.org/movie/181808",
+      "budget": 200000000,
+      "revenue": 1332459537,
+      "rating": "PG-13",
+      "genres": "[\"Fantasy\", \"Adventure\", \"Science Fiction\", \"Action\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 9,
+    "fields": {
+      "user": 1,
+      "title": "Rogue One: A Star Wars Story",
+      "tmdbId": 330459,
+      "releaseDate": "2016-12-14",
+      "searchableReleaseDate": "2016-12-14",
+      "runtime": "02:13:00",
+      "description": "A rogue band of resistance fighters unite for a mission to steal the Death Star plans and bring a new hope to the galaxy.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg",
+      "tmdbLink": "http://tmdb.org/movie/330459",
+      "budget": 200000000,
+      "revenue": 1056057273,
+      "rating": "PG-13",
+      "genres": "[\"Action\", \"Adventure\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 10,
+    "fields": {
+      "user": 1,
+      "title": "Solo: A Star Wars Story",
+      "tmdbId": 348350,
+      "releaseDate": "2018-05-15",
+      "searchableReleaseDate": "2018-05-15",
+      "runtime": "02:15:00",
+      "description": "Through a series of daring escapades deep within a dark and dangerous criminal underworld, Han Solo meets his mighty future copilot Chewbacca and encounters the notorious gambler Lando Calrissian.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//3IGbjc5ZC5yxim5W0sFING2kdcz.jpg",
+      "tmdbLink": "http://tmdb.org/movie/348350",
+      "budget": 250000000,
+      "revenue": 392952373,
+      "rating": "PG-13",
+      "genres": "[\"Action\", \"Adventure\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 11,
+    "fields": {
+      "user": 1,
+      "title": "Star Wars: The Clone Wars",
+      "tmdbId": 12180,
+      "releaseDate": "2008-08-05",
+      "searchableReleaseDate": "2008-08-05",
+      "runtime": "01:38:00",
+      "description": "Set between Episode II and III the Clone Wars is the first computer animated Star Wars film. Anakin and Obi Wan must find out who kidnapped Jabba the Hutts son and return him safely. The Seperatists will try anything to stop them and ruin any chance of a diplomatic agreement between the Hutt's and the Republic.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//xd6yhmtS6mEURZLwUDT5raEMbf.jpg",
+      "tmdbLink": "http://tmdb.org/movie/12180",
+      "budget": 8500000,
+      "revenue": 68282844,
+      "rating": "PG",
+      "genres": "[\"Animation\", \"Action\", \"Science Fiction\", \"Adventure\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 12,
+    "fields": {
+      "user": 1,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "tmdbId": 671,
+      "releaseDate": "2001-11-16",
+      "searchableReleaseDate": "2001-11-16",
+      "runtime": "02:32:00",
+      "description": "Harry Potter has lived under the stairs at his aunt and uncle's house his whole life. But on his 11th birthday, he learns he's a powerful wizard -- with a place waiting for him at the Hogwarts School of Witchcraft and Wizardry. As he learns to harness his newfound powers with the help of the school's kindly headmaster, Harry uncovers the truth about his parents' deaths -- and about the villain who's to blame.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//dCtFvscYcXQKTNvyyaQr2g2UacJ.jpg",
+      "tmdbLink": "http://tmdb.org/movie/671",
+      "budget": 125000000,
+      "revenue": 976475550,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 13,
+    "fields": {
+      "user": 1,
+      "title": "Harry Potter and the Chamber of Secrets",
+      "tmdbId": 672,
+      "releaseDate": "2002-11-13",
+      "searchableReleaseDate": "2002-11-13",
+      "runtime": "02:41:00",
+      "description": "Ignoring threats to his life, Harry returns to Hogwarts to investigate – aided by Ron and Hermione – a mysterious series of attacks.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg",
+      "tmdbLink": "http://tmdb.org/movie/672",
+      "budget": 100000000,
+      "revenue": 876688482,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Family\"]",
+      "status": 1,
+      "format": "V",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 14,
+    "fields": {
+      "user": 1,
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "tmdbId": 673,
+      "releaseDate": "2004-05-31",
+      "searchableReleaseDate": "2004-05-31",
+      "runtime": "02:21:00",
+      "description": "Harry, Ron and Hermione return to Hogwarts for another magic-filled year. Harry comes face to face with danger yet again, this time in the form of escaped convict, Sirius Black—and turns to sympathetic Professor Lupin for help.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//jUFjMoLh8T2CWzHUSjKCojI5SHu.jpg",
+      "tmdbLink": "http://tmdb.org/movie/673",
+      "budget": 130000000,
+      "revenue": 789804554,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Family\"]",
+      "status": 1,
+      "format": "V",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 15,
+    "fields": {
+      "user": 1,
+      "title": "Harry Potter and the Goblet of Fire",
+      "tmdbId": 674,
+      "releaseDate": "2005-11-16",
+      "searchableReleaseDate": "2005-11-16",
+      "runtime": "02:37:00",
+      "description": "Harry starts his fourth year at Hogwarts, competes in the treacherous Triwizard Tournament and faces the evil Lord Voldemort. Ron and Hermione help Harry manage the pressure – but Voldemort lurks, awaiting his chance to destroy Harry and all that he stands for.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//6sASqcdrEHXxUhA3nFpjrRecPD2.jpg",
+      "tmdbLink": "http://tmdb.org/movie/674",
+      "budget": 150000000,
+      "revenue": 895921036,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 16,
+    "fields": {
+      "user": 1,
+      "title": "Harry Potter and the Order of the Phoenix",
+      "tmdbId": 675,
+      "releaseDate": "2007-06-28",
+      "searchableReleaseDate": "2007-06-28",
+      "runtime": "02:18:00",
+      "description": "Returning for his fifth year of study at Hogwarts, Harry is stunned to find that his warnings about the return of Lord Voldemort have been ignored. Left with no choice, Harry takes matters into his own hands, training a small group of students – dubbed 'Dumbledore's Army' – to defend themselves against the dark arts.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//4YnLxYLHhT4UQ8i9jxAXWy46Xuw.jpg",
+      "tmdbLink": "http://tmdb.org/movie/675",
+      "budget": 150000000,
+      "revenue": 938212738,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Family\", \"Mystery\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 17,
+    "fields": {
+      "user": 1,
+      "title": "Harry Potter and the Half-Blood Prince",
+      "tmdbId": 767,
+      "releaseDate": "2009-07-07",
+      "searchableReleaseDate": "2009-07-07",
+      "runtime": "02:33:00",
+      "description": "As Harry begins his sixth year at Hogwarts, he discovers an old book marked as 'Property of the Half-Blood Prince', and begins to learn more about Lord Voldemort's dark past.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//bFXys2nhALwDvpkF3dP3Vvdfn8b.jpg",
+      "tmdbLink": "http://tmdb.org/movie/767",
+      "budget": 250000000,
+      "revenue": 933959197,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 18,
+    "fields": {
+      "user": 1,
+      "title": "Harry Potter and the Deathly Hallows: Part 1",
+      "tmdbId": 12444,
+      "releaseDate": "2010-10-17",
+      "searchableReleaseDate": "2010-10-17",
+      "runtime": "02:26:00",
+      "description": "Harry, Ron and Hermione walk away from their last year at Hogwarts to find and destroy the remaining Horcruxes, putting an end to Voldemort's bid for immortality. But with Harry's beloved Dumbledore dead and Voldemort's unscrupulous Death Eaters on the loose, the world is more dangerous than ever.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//bk1EWfRW0U76sWZiLDL1T7J0XV9.jpg",
+      "tmdbLink": "http://tmdb.org/movie/12444",
+      "budget": 250000000,
+      "revenue": 954305868,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 19,
+    "fields": {
+      "user": 1,
+      "title": "Harry Potter and the Deathly Hallows: Part 2",
+      "tmdbId": 12445,
+      "releaseDate": "2011-07-07",
+      "searchableReleaseDate": "2011-07-07",
+      "runtime": "02:10:00",
+      "description": "Harry, Ron and Hermione continue their quest to vanquish the evil Voldemort once and for all. Just as things begin to look hopeless for the young wizards, Harry discovers a trio of magical objects that endow him with powers to rival Voldemort's formidable skills.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//fTplI1NCSuEDP4ITLcTps739fcC.jpg",
+      "tmdbLink": "http://tmdb.org/movie/12445",
+      "budget": 125000000,
+      "revenue": 1342000000,
+      "rating": "PG-13",
+      "genres": "[\"Family\", \"Fantasy\", \"Adventure\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 20,
+    "fields": {
+      "user": 1,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "tmdbId": 120,
+      "releaseDate": "2001-12-18",
+      "searchableReleaseDate": "2001-12-18",
+      "runtime": "02:58:00",
+      "description": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//56zTpe2xvaA4alU51sRWPoKPYZy.jpg",
+      "tmdbLink": "http://tmdb.org/movie/120",
+      "budget": 93000000,
+      "revenue": 871368364,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Action\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 21,
+    "fields": {
+      "user": 1,
+      "title": "The Lord of the Rings: The Two Towers",
+      "tmdbId": 121,
+      "releaseDate": "2002-12-18",
+      "searchableReleaseDate": "2002-12-18",
+      "runtime": "02:59:00",
+      "description": "Frodo and Sam are trekking to Mordor to destroy the One Ring of Power while Gimli, Legolas and Aragorn search for the orc-captured Merry and Pippin. All along, nefarious wizard Saruman awaits the Fellowship members at the Orthanc Tower in Isengard.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg",
+      "tmdbLink": "http://tmdb.org/movie/121",
+      "budget": 79000000,
+      "revenue": 926287400,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Action\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 22,
+    "fields": {
+      "user": 1,
+      "title": "The Lord of the Rings: The Return of the King",
+      "tmdbId": 122,
+      "releaseDate": "2003-12-01",
+      "searchableReleaseDate": "2003-12-01",
+      "runtime": "03:21:00",
+      "description": "Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron's forces. Meanwhile, Frodo and Sam bring the ring closer to the heart of Mordor, the dark lord's realm.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+      "tmdbLink": "http://tmdb.org/movie/122",
+      "budget": 94000000,
+      "revenue": 1118888979,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Action\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 23,
+    "fields": {
+      "user": 1,
+      "title": "Star Trek",
+      "tmdbId": 13475,
+      "releaseDate": "2009-05-06",
+      "searchableReleaseDate": "2009-05-06",
+      "runtime": "02:07:00",
+      "description": "The fate of the galaxy rests in the hands of bitter rivals. One, James Kirk, is a delinquent, thrill-seeking Iowa farm boy. The other, Spock, a Vulcan, was raised in a logic-based society that rejects all emotion. As fiery instinct clashes with calm reason, their unlikely but powerful partnership is the only thing capable of leading their crew through unimaginable danger, boldly going where no one has gone before. The human adventure has begun again.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//xPihqTMhCh6b8DHYzE61jrIiNMS.jpg",
+      "tmdbLink": "http://tmdb.org/movie/13475",
+      "budget": 150000000,
+      "revenue": 385680446,
+      "rating": "PG-13",
+      "genres": "[\"Science Fiction\", \"Action\", \"Adventure\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 24,
+    "fields": {
+      "user": 1,
+      "title": "Star Trek Into Darkness",
+      "tmdbId": 54138,
+      "releaseDate": "2013-05-05",
+      "searchableReleaseDate": "2013-05-05",
+      "runtime": "02:12:00",
+      "description": "When the crew of the Enterprise is called back home, they find an unstoppable force of terror from within their own organization has detonated the fleet and everything it stands for, leaving our world in a state of crisis.  With a personal score to settle, Captain Kirk leads a manhunt to a war-zone world to capture a one man weapon of mass destruction. As our heroes are propelled into an epic chess game of life and death, love will be challenged, friendships will be torn apart, and sacrifices must be made for the only family Kirk has left: his crew.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//41mhrXASAW3sdn7LBWF49uCX0xi.jpg",
+      "tmdbLink": "http://tmdb.org/movie/54138",
+      "budget": 190000000,
+      "revenue": 467365246,
+      "rating": "PG-13",
+      "genres": "[\"Action\", \"Adventure\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 25,
+    "fields": {
+      "user": 1,
+      "title": "Star Trek Beyond",
+      "tmdbId": 188927,
+      "releaseDate": "2016-07-07",
+      "searchableReleaseDate": "2016-07-07",
+      "runtime": "02:02:00",
+      "description": "The USS Enterprise crew explores the furthest reaches of uncharted space, where they encounter a mysterious new enemy who puts them and everything the Federation stands for to the test.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//mLrQMqyZgLeP8FrT5LCobKAiqmK.jpg",
+      "tmdbLink": "http://tmdb.org/movie/188927",
+      "budget": 185000000,
+      "revenue": 343471816,
+      "rating": "PG-13",
+      "genres": "[\"Action\", \"Adventure\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 26,
+    "fields": {
+      "user": 1,
+      "title": "Bee Movie",
+      "tmdbId": 5559,
+      "releaseDate": "2007-10-28",
+      "searchableReleaseDate": "2007-10-28",
+      "runtime": "01:31:00",
+      "description": "Barry B. Benson, a bee who has just graduated from college, is disillusioned at his lone career choice: making honey. On a special trip outside the hive, Barry's life is saved by Vanessa, a florist in New York City. As their relationship blossoms, he discovers humans actually eat honey, and subsequently decides to sue us.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//QhbOzpYfBOwrRiuTu9otPk919R.jpg",
+      "tmdbLink": "http://tmdb.org/movie/5559",
+      "budget": 150000000,
+      "revenue": 287594577,
+      "rating": "PG",
+      "genres": "[\"Family\", \"Animation\", \"Adventure\", \"Comedy\"]",
+      "status": 1,
+      "format": "B",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 27,
+    "fields": {
+      "user": 3,
+      "title": "Bee Movie",
+      "tmdbId": 5559,
+      "releaseDate": "2007-10-28",
+      "searchableReleaseDate": "2007-10-28",
+      "runtime": "01:31:00",
+      "description": "Barry B. Benson, a bee who has just graduated from college, is disillusioned at his lone career choice: making honey. On a special trip outside the hive, Barry's life is saved by Vanessa, a florist in New York City. As their relationship blossoms, he discovers humans actually eat honey, and subsequently decides to sue us.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//QhbOzpYfBOwrRiuTu9otPk919R.jpg",
+      "tmdbLink": "http://tmdb.org/movie/5559",
+      "budget": 150000000,
+      "revenue": 287594577,
+      "rating": "PG",
+      "genres": "[\"Family\", \"Animation\", \"Adventure\", \"Comedy\"]",
+      "status": 1,
+      "format": "B",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 28,
+    "fields": {
+      "user": 5,
+      "title": "Bee Movie",
+      "tmdbId": 5559,
+      "releaseDate": "2007-10-28",
+      "searchableReleaseDate": "2007-10-28",
+      "runtime": "01:31:00",
+      "description": "Barry B. Benson, a bee who has just graduated from college, is disillusioned at his lone career choice: making honey. On a special trip outside the hive, Barry's life is saved by Vanessa, a florist in New York City. As their relationship blossoms, he discovers humans actually eat honey, and subsequently decides to sue us.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//QhbOzpYfBOwrRiuTu9otPk919R.jpg",
+      "tmdbLink": "http://tmdb.org/movie/5559",
+      "budget": 150000000,
+      "revenue": 287594577,
+      "rating": "PG",
+      "genres": "[\"Family\", \"Animation\", \"Adventure\", \"Comedy\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 29,
+    "fields": {
+      "user": 5,
+      "title": "The Incredibles",
+      "tmdbId": 9806,
+      "releaseDate": "2004-11-05",
+      "searchableReleaseDate": "2004-11-05",
+      "runtime": "01:55:00",
+      "description": "Bob Parr has given up his superhero days to log in time as an insurance adjuster and raise his three children with his formerly heroic wife in suburbia. But when he receives a mysterious assignment, it's time to get back into costume.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//2LqaLgk4Z226KkgPJuiOQ58wvrm.jpg",
+      "tmdbLink": "http://tmdb.org/movie/9806",
+      "budget": 92000000,
+      "revenue": 631442092,
+      "rating": "PG",
+      "genres": "[\"Action\", \"Adventure\", \"Animation\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 30,
+    "fields": {
+      "user": 5,
+      "title": "Pocahontas",
+      "tmdbId": 10530,
+      "releaseDate": "1995-06-14",
+      "searchableReleaseDate": "1995-06-14",
+      "runtime": "01:21:00",
+      "description": "Pocahontas, daughter of a Native American tribe chief, falls in love with an English soldier as colonists invade 17th century Virginia.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//qk95miOV8wDABbO5gyCpCrvbVFu.jpg",
+      "tmdbLink": "http://tmdb.org/movie/10530",
+      "budget": 55000000,
+      "revenue": 346079773,
+      "rating": "G",
+      "genres": "[\"Adventure\", \"Animation\", \"Family\", \"Romance\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 31,
+    "fields": {
+      "user": 5,
+      "title": "Cinderella",
+      "tmdbId": 11224,
+      "releaseDate": "1950-03-04",
+      "searchableReleaseDate": "1950-03-04",
+      "runtime": "01:14:00",
+      "description": "Cinderella has faith her dreams of a better life will come true. With help from her loyal mice friends and a wave of her Fairy Godmother's wand, Cinderella's rags are magically turned into a glorious gown and off she goes to the Royal Ball. But when the clock strikes midnight, the spell is broken, leaving a single glass slipper... the only key to the ultimate fairy-tale ending!",
+      "imageLink": "http://image.tmdb.org/t/p/w185//cdf4J7tDhSPAghWWgx9EnwQWBfF.jpg",
+      "tmdbLink": "http://tmdb.org/movie/11224",
+      "budget": 2900000,
+      "revenue": 263591415,
+      "rating": "G",
+      "genres": "[\"Family\", \"Fantasy\", \"Animation\", \"Romance\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 32,
+    "fields": {
+      "user": 5,
+      "title": "The Lion King",
+      "tmdbId": 8587,
+      "releaseDate": "1994-05-07",
+      "searchableReleaseDate": "1994-05-07",
+      "runtime": "01:29:00",
+      "description": "A young lion cub named Simba can't wait to be king. But his uncle craves the title for himself and will stop at nothing to get it.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//bKPtXn9n4M4s8vvZrbw40mYsefB.jpg",
+      "tmdbLink": "http://tmdb.org/movie/8587",
+      "budget": 45000000,
+      "revenue": 987483777,
+      "rating": "",
+      "genres": "[\"Family\", \"Animation\", \"Drama\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 33,
+    "fields": {
+      "user": 5,
+      "title": "Tangled",
+      "tmdbId": 38757,
+      "releaseDate": "2010-02-03",
+      "searchableReleaseDate": "2010-02-03",
+      "runtime": "01:40:00",
+      "description": "When the kingdom's most wanted-and most charming-bandit Flynn Rider hides out in a mysterious tower, he's taken hostage by Rapunzel, a beautiful and feisty tower-bound teen with 70 feet of magical, golden hair. Flynn's curious captor, who's looking for her ticket out of the tower where she's been locked away for years, strikes a deal with the handsome thief and the unlikely duo sets off on an action-packed escapade, complete with a super-cop horse, an over-protective chameleon and a gruff gang of pub thugs.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//re6AOJbhBk9FIK3knwU6rYlbPDx.jpg",
+      "tmdbLink": "http://tmdb.org/movie/38757",
+      "budget": 260000000,
+      "revenue": 591794936,
+      "rating": "PG",
+      "genres": "[\"Animation\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 34,
+    "fields": {
+      "user": 5,
+      "title": "Moana",
+      "tmdbId": 277834,
+      "releaseDate": "2016-11-23",
+      "searchableReleaseDate": "2016-11-23",
+      "runtime": "01:47:00",
+      "description": "In Ancient Polynesia, when a terrible curse incurred by Maui reaches an impetuous Chieftain's daughter's island, she answers the Ocean's call to seek out the demigod to set things right.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//z4x0Bp48ar3Mda8KiPD1vwSY3D8.jpg",
+      "tmdbLink": "http://tmdb.org/movie/277834",
+      "budget": 150000000,
+      "revenue": 695331111,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Comedy\", \"Family\", \"Animation\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 35,
+    "fields": {
+      "user": 5,
+      "title": "Peter Pan",
+      "tmdbId": 10693,
+      "releaseDate": "1953-02-05",
+      "searchableReleaseDate": "1953-02-05",
+      "runtime": "01:17:00",
+      "description": "Leaving the safety of their nursery behind, Wendy, Michael and John follow Peter Pan to a magical world where childhood lasts forever. But while in Neverland, the kids must face Captain Hook and foil his attempts to get rid of Peter for good.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//aWLgUzpkVFk8OVcg5jJte5I0Ces.jpg",
+      "tmdbLink": "http://tmdb.org/movie/10693",
+      "budget": 4000000,
+      "revenue": 87404651,
+      "rating": "G",
+      "genres": "[\"Animation\", \"Family\", \"Adventure\", \"Fantasy\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 36,
+    "fields": {
+      "user": 5,
+      "title": "Treasure Planet",
+      "tmdbId": 9016,
+      "releaseDate": "2002-11-26",
+      "searchableReleaseDate": "2002-11-26",
+      "runtime": "01:35:00",
+      "description": "When space galleon cabin boy Jim Hawkins discovers a map to an intergalactic \"loot of a thousand worlds,\" a cyborg cook named John Silver teaches him to battle supernovas and space storms. But, soon, Jim realizes Silver is a pirate intent on mutiny!",
+      "imageLink": "http://image.tmdb.org/t/p/w185//yfcoA7q9n852yVnYa0VcAchgA72.jpg",
+      "tmdbLink": "http://tmdb.org/movie/9016",
+      "budget": 140000000,
+      "revenue": 109578115,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Animation\", \"Family\", \"Fantasy\", \"Science Fiction\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 37,
+    "fields": {
+      "user": 5,
+      "title": "Mulan",
+      "tmdbId": 10674,
+      "releaseDate": "1998-06-18",
+      "searchableReleaseDate": "1998-06-18",
+      "runtime": "01:28:00",
+      "description": "A tomboyish girl disguises herself as a young man so she can fight with the Imperial Chinese Army against the invading Huns. With help from wise-cracking dragon Mushu, Mulan just might save her country -- and win the heart of handsome Captain Li Shang.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//7orfSLncDBQrFQpUkoAfunWNySk.jpg",
+      "tmdbLink": "http://tmdb.org/movie/10674",
+      "budget": 90000000,
+      "revenue": 304320254,
+      "rating": "G",
+      "genres": "[\"Animation\", \"Family\", \"Adventure\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 38,
+    "fields": {
+      "user": 5,
+      "title": "Snow White and the Seven Dwarfs",
+      "tmdbId": 408,
+      "releaseDate": "1937-12-20",
+      "searchableReleaseDate": "1937-12-20",
+      "runtime": "01:23:00",
+      "description": "A beautiful girl, Snow White, takes refuge in the forest in the house of seven dwarfs to hide from her stepmother, the wicked Queen. The Queen is jealous because she wants to be known as \"the fairest in the land,\" and Snow White's beauty surpasses her own.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//wbVGRBYPRRahIZNGXY9TfHDUSc2.jpg",
+      "tmdbLink": "http://tmdb.org/movie/408",
+      "budget": 1488423,
+      "revenue": 184925486,
+      "rating": "G",
+      "genres": "[\"Fantasy\", \"Animation\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 39,
+    "fields": {
+      "user": 5,
+      "title": "Beauty and the Beast",
+      "tmdbId": 10020,
+      "releaseDate": "1991-11-13",
+      "searchableReleaseDate": "1991-11-13",
+      "runtime": "01:24:00",
+      "description": "Follow the adventures of Belle, a bright young woman who finds herself in the castle of a prince who's been turned into a mysterious beast. With the help of the castle's enchanted staff, Belle soon learns the most important lesson of all -- that true beauty comes from within.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//b9QJr2oblOu1grgOMUZF1xkUJdh.jpg",
+      "tmdbLink": "http://tmdb.org/movie/10020",
+      "budget": 25000000,
+      "revenue": 377350553,
+      "rating": "G",
+      "genres": "[\"Romance\", \"Family\", \"Animation\", \"Fantasy\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 40,
+    "fields": {
+      "user": 5,
+      "title": "The Hunchback of Notre Dame",
+      "tmdbId": 10545,
+      "releaseDate": "1996-06-21",
+      "searchableReleaseDate": "1996-06-21",
+      "runtime": "01:31:00",
+      "description": "When Quasimodo defies the evil Frollo and ventures out to the Festival of Fools, the cruel crowd jeers him. Rescued by fellow outcast the gypsy Esmeralda, Quasi soon finds himself battling to save the people and the city he loves.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//gpMXF2Bp7GHTT8GbMgf7yuBEyuV.jpg",
+      "tmdbLink": "http://tmdb.org/movie/10545",
+      "budget": 100000000,
+      "revenue": 100138851,
+      "rating": "G",
+      "genres": "[\"Drama\", \"Animation\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 41,
+    "fields": {
+      "user": 5,
+      "title": "Toy Story",
+      "tmdbId": 862,
+      "releaseDate": "1995-10-30",
+      "searchableReleaseDate": "1995-10-30",
+      "runtime": "01:21:00",
+      "description": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//rhIRbceoE9lR4veEXuwCC2wARtG.jpg",
+      "tmdbLink": "http://tmdb.org/movie/862",
+      "budget": 30000000,
+      "revenue": 373554033,
+      "rating": "G",
+      "genres": "[\"Animation\", \"Comedy\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 42,
+    "fields": {
+      "user": 5,
+      "title": "Toy Story 2",
+      "tmdbId": 863,
+      "releaseDate": "1999-10-30",
+      "searchableReleaseDate": "1999-10-30",
+      "runtime": "01:32:00",
+      "description": "Andy heads off to Cowboy Camp, leaving his toys to their own devices. Things shift into high gear when an obsessive toy collector named Al McWhiggen, owner of Al's Toy Barn kidnaps Woody. Andy's toys mount a daring rescue mission, Buzz Lightyear meets his match and Woody has to decide where he and his heart truly belong.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//3CmK3XurcLeUyMifCR28ibzupbB.jpg",
+      "tmdbLink": "http://tmdb.org/movie/863",
+      "budget": 90000000,
+      "revenue": 497366869,
+      "rating": "G",
+      "genres": "[\"Animation\", \"Comedy\", \"Family\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 43,
+    "fields": {
+      "user": 5,
+      "title": "Toy Story 3",
+      "tmdbId": 10193,
+      "releaseDate": "2010-06-16",
+      "searchableReleaseDate": "2010-06-16",
+      "runtime": "01:43:00",
+      "description": "Woody, Buzz, and the rest of Andy's toys haven't been played with in years. With Andy about to go to college, the gang find themselves accidentally left at a nefarious day care center. The toys must band together to escape and return home to Andy.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//mMltbSxwEdNE4Cv8QYLpzkHWTDo.jpg",
+      "tmdbLink": "http://tmdb.org/movie/10193",
+      "budget": 200000000,
+      "revenue": 1066969703,
+      "rating": "G",
+      "genres": "[\"Animation\", \"Family\", \"Comedy\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 44,
+    "fields": {
+      "user": 2,
+      "title": "Skyfall",
+      "tmdbId": 37724,
+      "releaseDate": "2012-10-25",
+      "searchableReleaseDate": "2012-10-25",
+      "runtime": "02:23:00",
+      "description": "When Bond's latest assignment goes gravely wrong and agents around the world are exposed, MI6 is attacked forcing M to relocate the agency. These events cause her authority and position to be challenged by Gareth Mallory, the new Chairman of the Intelligence and Security Committee. With MI6 now compromised from both inside and out, M is left with one ally she can trust: Bond. 007 takes to the shadows - aided only by field agent, Eve - following a trail to the mysterious Silva, whose lethal and hidden motives have yet to reveal themselves.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//lQCkPLDxFONmgzrWLvq085v1g2d.jpg",
+      "tmdbLink": "http://tmdb.org/movie/37724",
+      "budget": 200000000,
+      "revenue": 1108561013,
+      "rating": "PG-13",
+      "genres": "[\"Action\", \"Adventure\", \"Thriller\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 45,
+    "fields": {
+      "user": 2,
+      "title": "Mission: Impossible",
+      "tmdbId": 954,
+      "releaseDate": "1996-05-22",
+      "searchableReleaseDate": "1996-05-22",
+      "runtime": "01:50:00",
+      "description": "When Ethan Hunt, the leader of a crack espionage team whose perilous operation has gone awry with no explanation, discovers that a mole has penetrated the CIA, he's surprised to learn that he's the No. 1 suspect. To clear his name, Hunt now must ferret out the real double agent and, in the process, even the score.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//1PVKS17pIBFsIhgFws2uagPDNLW.jpg",
+      "tmdbLink": "http://tmdb.org/movie/954",
+      "budget": 80000000,
+      "revenue": 457696359,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Action\", \"Thriller\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 46,
+    "fields": {
+      "user": 2,
+      "title": "Mission: Impossible II",
+      "tmdbId": 955,
+      "releaseDate": "2000-05-24",
+      "searchableReleaseDate": "2000-05-24",
+      "runtime": "02:03:00",
+      "description": "With computer genius Luther Stickell at his side and a beautiful thief on his mind, agent Ethan Hunt races across Australia and Spain to stop a former IMF agent from unleashing a genetically engineered biological weapon called Chimera. This mission, should Hunt choose to accept it, plunges him into the center of an international crisis of terrifying magnitude.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//di800v3Racf2FQ1ObZ1dskgS0px.jpg",
+      "tmdbLink": "http://tmdb.org/movie/955",
+      "budget": 125000000,
+      "revenue": 546388105,
+      "rating": "",
+      "genres": "[\"Adventure\", \"Action\", \"Thriller\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 47,
+    "fields": {
+      "user": 2,
+      "title": "Mission: Impossible III",
+      "tmdbId": 956,
+      "releaseDate": "2006-05-03",
+      "searchableReleaseDate": "2006-05-03",
+      "runtime": "02:06:00",
+      "description": "Retired from active duty to train new IMF agents, Ethan Hunt is called back into action to confront sadistic arms dealer, Owen Davian. Hunt must try to protect his girlfriend while working with his new team to complete the mission.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//qjy8ABAbWooV4jLG6UjzDHlv4RB.jpg",
+      "tmdbLink": "http://tmdb.org/movie/956",
+      "budget": 150000000,
+      "revenue": 397850012,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Action\", \"Thriller\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 48,
+    "fields": {
+      "user": 2,
+      "title": "Mission: Impossible - Fallout",
+      "tmdbId": 353081,
+      "releaseDate": "2018-07-13",
+      "searchableReleaseDate": "2018-07-13",
+      "runtime": "02:28:00",
+      "description": "When an IMF mission ends badly, the world is faced with dire consequences. As Ethan Hunt takes it upon himself to fulfill his original briefing, the CIA begin to question his loyalty and his motives. The IMF team find themselves in a race against time, hunted by assassins while trying to prevent a global catastrophe.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//AkJQpZp9WoNdj7pLYSj1L0RcMMN.jpg",
+      "tmdbLink": "http://tmdb.org/movie/353081",
+      "budget": 178000000,
+      "revenue": 791017452,
+      "rating": "PG-13",
+      "genres": "[\"Action\", \"Thriller\", \"Adventure\"]",
+      "status": 1,
+      "format": "K",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 49,
+    "fields": {
+      "user": 2,
+      "title": "Raiders of the Lost Ark",
+      "tmdbId": 85,
+      "releaseDate": "1981-06-12",
+      "searchableReleaseDate": "1981-06-12",
+      "runtime": "01:55:00",
+      "description": "When Dr. Indiana Jones – the tweed-suited professor who just happens to be a celebrated archaeologist – is hired by the government to locate the legendary Ark of the Covenant, he finds himself up against the entire Nazi regime.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//44sKJOGP3fTm4QXBcIuqu0RkdP7.jpg",
+      "tmdbLink": "http://tmdb.org/movie/85",
+      "budget": 18000000,
+      "revenue": 389925971,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Action\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 50,
+    "fields": {
+      "user": 2,
+      "title": "Indiana Jones and the Temple of Doom",
+      "tmdbId": 87,
+      "releaseDate": "1984-05-23",
+      "searchableReleaseDate": "1984-05-23",
+      "runtime": "01:58:00",
+      "description": "After arriving in India, Indiana Jones is asked by a desperate village to find a mystical stone. He agrees – and stumbles upon a secret cult plotting a terrible plan in the catacombs of an ancient palace.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//f2nTRKk2zGdUTE7tLJ5EGGSuKA6.jpg",
+      "tmdbLink": "http://tmdb.org/movie/87",
+      "budget": 28000000,
+      "revenue": 333000000,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Action\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 51,
+    "fields": {
+      "user": 2,
+      "title": "Spider-Man",
+      "tmdbId": 557,
+      "releaseDate": "2002-05-01",
+      "searchableReleaseDate": "2002-05-01",
+      "runtime": "02:01:00",
+      "description": "After being bitten by a genetically altered spider, nerdy high school student Peter Parker is endowed with amazing powers.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//A9BYH1DSetvC7bjbHWCaL17Qbp5.jpg",
+      "tmdbLink": "http://tmdb.org/movie/557",
+      "budget": 139000000,
+      "revenue": 821708551,
+      "rating": "PG-13",
+      "genres": "[\"Fantasy\", \"Action\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 52,
+    "fields": {
+      "user": 2,
+      "title": "The Prince of Egypt",
+      "tmdbId": 9837,
+      "releaseDate": "1998-12-15",
+      "searchableReleaseDate": "1998-12-15",
+      "runtime": "01:39:00",
+      "description": "This is the extraordinary tale of two brothers named Moses and Ramses, one born of royal blood, and one an orphan with a secret past. Growing up the best of friends, they share a strong bond of free-spirited youth and good-natured rivalry. But the truth will ultimately set them at odds, as one becomes the ruler of the most powerful empire on earth, and the other the chosen leader of his people! Their final confrontation will forever change their lives and the world.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//wD34ls2faCrj8YvFViEaPfBtBEe.jpg",
+      "tmdbLink": "http://tmdb.org/movie/9837",
+      "budget": 70000000,
+      "revenue": 218613188,
+      "rating": "PG",
+      "genres": "[\"Adventure\", \"Animation\", \"Drama\", \"Family\", \"Music\", \"Comedy\"]",
+      "status": 1,
+      "format": "K",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 53,
+    "fields": {
+      "user": 2,
+      "title": "The Hunt for Red October",
+      "tmdbId": 1669,
+      "releaseDate": "1990-03-02",
+      "searchableReleaseDate": "1990-03-02",
+      "runtime": "02:14:00",
+      "description": "A new, technologically-superior Soviet sub, the Red October, is heading for the U.S. coast under the command of Captain Marko Ramius. The American government thinks Ramius is planning to attack. A lone CIA analyst has a different idea: he thinks Ramius is planning to defect, but he has only a few hours to find him and prove it — because the entire Russian naval and air commands are trying to find him, too.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//bqvlKYlWq2uibsuVzKTWseeccd2.jpg",
+      "tmdbLink": "http://tmdb.org/movie/1669",
+      "budget": 30000000,
+      "revenue": 199200000,
+      "rating": "PG",
+      "genres": "[\"Action\", \"Adventure\", \"Thriller\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 54,
+    "fields": {
+      "user": 2,
+      "title": "Prince of Persia: The Sands of Time",
+      "tmdbId": 9543,
+      "releaseDate": "2010-05-19",
+      "searchableReleaseDate": "2010-05-19",
+      "runtime": "01:56:00",
+      "description": "A rogue prince reluctantly joins forces with a mysterious princess and together, they race against dark forces to safeguard an ancient dagger capable of releasing the Sands of Time – gift from the gods that can reverse time and allow its possessor to rule the world.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//dtjz9Z6MTsuFyrzqdwVB4dgHENA.jpg",
+      "tmdbLink": "http://tmdb.org/movie/9543",
+      "budget": 150000000,
+      "revenue": 335154643,
+      "rating": "PG-13",
+      "genres": "[\"Adventure\", \"Fantasy\", \"Action\", \"Romance\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.movie",
+    "pk": 55,
+    "fields": {
+      "user": 4,
+      "title": "Bee Movie",
+      "tmdbId": 5559,
+      "releaseDate": "2007-10-28",
+      "searchableReleaseDate": "2007-10-28",
+      "runtime": "01:31:00",
+      "description": "Barry B. Benson, a bee who has just graduated from college, is disillusioned at his lone career choice: making honey. On a special trip outside the hive, Barry's life is saved by Vanessa, a florist in New York City. As their relationship blossoms, he discovers humans actually eat honey, and subsequently decides to sue us.",
+      "imageLink": "http://image.tmdb.org/t/p/w185//QhbOzpYfBOwrRiuTu9otPk919R.jpg",
+      "tmdbLink": "http://tmdb.org/movie/5559",
+      "budget": 150000000,
+      "revenue": 287594577,
+      "rating": "PG",
+      "genres": "[\"Family\", \"Animation\", \"Adventure\", \"Comedy\"]",
+      "status": 1,
+      "format": "D",
+      "condition": {
+        "conditions": []
+      },
+      "preferences": {
+        "data": {
+          "borrow_duration": "2 weeks"
+        }
+      }
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 1,
+    "fields": {
+      "tmdb_id": 28,
+      "name": "Action"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 2,
+    "fields": {
+      "tmdb_id": 12,
+      "name": "Adventure"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 3,
+    "fields": {
+      "tmdb_id": 16,
+      "name": "Animation"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 4,
+    "fields": {
+      "tmdb_id": 35,
+      "name": "Comedy"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 5,
+    "fields": {
+      "tmdb_id": 80,
+      "name": "Crime"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 6,
+    "fields": {
+      "tmdb_id": 99,
+      "name": "Documentary"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 7,
+    "fields": {
+      "tmdb_id": 18,
+      "name": "Drama"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 8,
+    "fields": {
+      "tmdb_id": 10751,
+      "name": "Family"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 9,
+    "fields": {
+      "tmdb_id": 14,
+      "name": "Fantasy"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 10,
+    "fields": {
+      "tmdb_id": 36,
+      "name": "History"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 11,
+    "fields": {
+      "tmdb_id": 27,
+      "name": "Horror"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 12,
+    "fields": {
+      "tmdb_id": 10402,
+      "name": "Music"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 13,
+    "fields": {
+      "tmdb_id": 9648,
+      "name": "Mystery"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 14,
+    "fields": {
+      "tmdb_id": 10749,
+      "name": "Romance"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 15,
+    "fields": {
+      "tmdb_id": 878,
+      "name": "Science Fiction"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 16,
+    "fields": {
+      "tmdb_id": 10770,
+      "name": "TV Movie"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 17,
+    "fields": {
+      "tmdb_id": 53,
+      "name": "Thriller"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 18,
+    "fields": {
+      "tmdb_id": 10752,
+      "name": "War"
+    }
+  },
+  {
+    "model": "main.genre",
+    "pk": 19,
+    "fields": {
+      "tmdb_id": 37,
+      "name": "Western"
+    }
+  }
+]

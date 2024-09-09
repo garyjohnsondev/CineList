@@ -1,0 +1,32 @@
+{% extends 'base_frontend.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>{{ form_title }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="main-content">
+        {% block form %}
+
+            {% block form_definition %}
+            <form action="{% url form_action %}" method="post" class="form">
+            {% endblock %}
+
+                {% csrf_token %}
+                    {% block form_title %}
+                        <h4>{{ form_title }}</h4>
+                    {% endblock %}
+                        {{ form.media }}
+                        {% for field in form %}
+                            <div class="form-group col-sm-4">
+                                {{ field|as_crispy_field }}
+                            </div>
+                        {% endfor %}
+                <a href="{{ http_referer }}"class="btn btn-secondary">Cancel</a>
+                <input type="submit" class="btn btn-primary" value="Submit" />
+            </form>
+        {% endblock %}
+    </div>
+{% endblock %}

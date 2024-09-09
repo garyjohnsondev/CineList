@@ -1,0 +1,93 @@
+{% extends 'base_frontend.html' %}
+{% load static %}
+{% load api_helper %}
+{% load parse_date %}
+{% load library_helper %}
+
+{% block title %}
+<title>Browse</title>
+{% endblock %}
+
+{%  block content %}
+<div class="container-flex bg-dark text-light">
+    <div class="browse-nav">
+        <div class="row">
+            <div class="col-2">
+                <div class="nav flex-column nav-pills bg-dark" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-recommended-tab" data-toggle="pill" href="#v-pills-recommended" role="tab" aria-controls="v-pills-home" aria-selected="true">All Movies</a>
+                    {% for genre in genres %}
+                    <a class="nav-link" id="v-pills-{{ genre.name|lower }}-tab" data-toggle="pill" href="#v-pills-{{ genre.name|lower }}" role="tab" aria-controls="v-pills-{{ genre.name|lower }}" aria-selected="false">{{ genre.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-recommended" role="tabpanel" aria-labelledby="v-pills-recommended-tab">
+                        {% for movie in allmovies %}
+                        <div class="movie-result">
+                            <div class="col card text-dark result-card">
+                                <div class="card-header move-to-center">
+                                    <img class="search-result-image card-img-top" src="{{ movie.imageLink }}">
+                                </div>
+                                <div class="card-body">
+                                    <a class="card-title text-info font-weight-bold" href="{{ movie.tmdbLink }}" target="_blank"  data-toggle="tooltip" data-placement="top" title="View on TMDB">{{ movie.title }}</a>
+                                    <div class="row">
+                                        <div class="small col-sm-7 font-weight-bold">{{ movie.releaseDate|date:"Y" }}</div>
+                                        <span class="badge badge-success badge-pill align-self-center float-right col-sm-3">{{ movie.rating }}</span>
+                                    </div>
+                                    <div class="result-card-body">
+                                        <div class="overflow-auto card-text text-dark">{{ movie.description|truncatewords:20}}</div>
+                                        <div class="text-dark mt-3">This is <a href="{% url 'view_profile' other_id=movie.user.id %}">{{ movie.user }}'s</a> movie.</div>
+                                        <span class="font-weight-normal">{{ movie.borrow_status | availabilty_formatter }} now</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a class="btn btn-info btn-sm btn-block text-light" href="{% url 'send_borrow_request' movie_id=movie.id %}">Borrow</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                    {% for genre, movies in results.items %}
+                    <div class="tab-pane fade" id="v-pills-{{ genre|lower }}" role="tabpanel" aria-labelledby="v-pills-{{ genre|lower }}-tab">
+                        {% for movie in movies %}
+                        <div class="movie-result">
+                            <div class="col card text-dark result-card">
+                                <div class="card-header move-to-center">
+                                    <img class="search-result-image card-img-top" src="{{ movie.imageLink }}">
+                                </div>
+                                <div class="card-body">
+                                    <a class="card-title text-info font-weight-bold" href="{{ movie.tmdbLink }}" target="_blank"  data-toggle="tooltip" data-placement="top" title="View on TMDB">{{ movie.title }}</a>
+                                    <div class="row">
+                                        <div class="small col-sm-7 font-weight-bold">{{ movie.releaseDate|date:"Y" }}</div>
+                                        <span class="badge badge-success badge-pill align-self-center float-right col-sm-3">{{ movie.rating }}</span>
+                                    </div>
+                                    <div class="result-card-body">
+                                        <div class="overflow-auto card-text text-dark font-weight-light">{{ movie.description|truncatewords:20}}</div>
+                                        <div class="text-dark mt-3">This is <a href="{% url 'view_profile' other_id=movie.user.id %}">{{ movie.user }}'s</a> movie.</div>
+                                        <span class="font-weight-normal">{{ movie.borrow_status | availabilty_formatter }} now</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a class="btn btn-info btn-sm btn-block text-light" href="{% url 'send_borrow_request' movie_id=movie.id %}">Borrow</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<script type="text/javascript">
+    $('#v-pills-recommended-tab a').on('click', function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+</script>

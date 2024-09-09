@@ -1,0 +1,10 @@
+{% extends 'user/profile.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Your Friends</title>
+{% endblock %}
+
+{% block page_content %}
+    {% include 'user/friend/friends_list.html' %}
+{% endblock %}

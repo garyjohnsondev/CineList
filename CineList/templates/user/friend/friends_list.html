@@ -1,0 +1,17 @@
+<div class="row flex-row">
+    {% for friend in friends %}
+    <div class="col mb-4" style="max-width: 17rem">
+        <div class="card profile-summary">
+            <div class="card-header">
+                <h6><a class="text-info" href="{% url 'view_profile' other_id=friend.id %}">{{ friend.get_full_name }}</a></h6>
+            </div>
+            <div class="card-body">
+                <div class="row no-gutters small flex-row">{{ friend.email }}</div>
+                {% if friend.phone %}
+                    <div class="row no-gutters">{{ friend.phone_number }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

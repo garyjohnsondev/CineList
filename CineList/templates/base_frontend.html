@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load get_open_requests %}
+
+{% block header %}
+<nav class="navbar navbar-expand navbar-dark justify-content-between">
+	<span md="8" class="logo-text navbar-brand align-self-center ml-5">
+		<a class="nav-link" href="{% url 'dashboard' %}"><img class="header-logo-svg" src="{% static 'images/logo.svg' %}" width="35" height="35"/>CineList</a>
+	</span>
+	<ul class="navbar-nav nav-bar-frontend font-weight-bold">
+		<li class="nav-item mt-auto mb-auto">
+			<a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+		</li>
+		<li class="nav-item mt-auto mb-auto">
+			<a class="nav-link" href="{% url 'search' %}">Search</a>
+		</li>
+		<li class="nav-item mt-auto mb-auto">
+			<a class="nav-link " href="{% url 'browse' %}">Browse</a>
+		</li>
+	</ul>
+	<ul class="navbar-nav mr-5 ml-auto">
+		<li class="nav-item badge badge-pill mt-auto mb-auto mr-2 nav-find-friends" style="">
+			<a class="nav-link" href="{% url 'find_friend_index' %}">Find Friends</a>
+		</li>
+		<li class="user-profile-dropdown nav-item dropdown ml-auto">
+			{% with user|count_open_requests as open_requests %}
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				<span class="mt-auto mb-auto font-weight-light">{{ user.get_full_name }}</span>
+				<img class="mt-auto mb-auto profile-logo" src="{% static '/images/icons/baseline-account_circle-24px.svg' %}" alt="User profile" width="35px">
+                {% if open_requests %}<span class="badge badge-danger badge-pill" style="z-index:15;position:relative; left: -45px; top:-10px">{{ open_requests }}</span>{% endif %}
+			</a>
+		    <div class="dropdown-menu">
+		      <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+		      <a class="dropdown-item" href="{% url 'library' other_id=user.id %}">Library</a>
+			  <a class="dropdown-item" href="{% url 'messages' %}">Messages</a>
+			  <div class="dropdown-divider"></div>
+			  <a class="dropdown-item font-weight-bold" href="{% url 'find_friend_index' %}">
+				  Find Friends
+				  {% if open_requests %}<span class="badge badge-danger badge-pill">{{ open_requests }}</span>{% endif %}
+			  </a>
+			  <div class="dropdown-divider"></div>
+		      <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+		    </div>
+			{% endwith %}
+		</li>
+	</ul>
+</nav>
+{% endblock %}
+{% block alerts %}
+	{% if alert %}
+		<div id="add-title-alert"class="alert alert-dismissable {{alert.type}} float-right" style="width: 20rem" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+			<p class="font-weight-light">{{alert.message}}</p> {% if alert.link %}<a class="alert-link" href="{% url alert.link %}">{{ alert.link_message }}</a>{% endif %}
+		</div>
+	{% endif %}
+{% endblock %}

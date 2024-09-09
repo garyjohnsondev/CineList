@@ -1,0 +1,8 @@
+<form action="{% url 'update_borrow_request' borrow_request_id=borrow_request.id %}" method="get" class="form-inline">
+    {% if user == borrow_request.sender %}
+        <button class="btn btn-warning" type="submit" name="status" value="C">Cancel Request</button>
+    {% elif user == borrow_request.receiver %}
+        <button class="btn btn-info mr-2" type="submit" name="status" value="A">Accept</button>
+        <button class="btn btn-warning" type="submit" name="status" value="D">Deny</button>
+    {% endif %}
+</form>

@@ -1,0 +1,13 @@
+{% extends "base_frontend.html" %}
+{% load static %}
+
+{% block title %} <title> {{ other_user.first_name }} </title> {% endblock %}
+
+{% block content %}
+	<div class = "main-content">
+		<h1> {{ other_user.first_name }}'s Profile </h1>
+		<p> {{ other_user.first_name }} has sent you a friend request! </p>
+		<a class="btn btn-warning" href={% url 'request_accepted' other_id=other_user.id %}> Accept </a>
+		<a class="btn btn-warning" href={% url 'request_cancelled' other_id=other_user.id %}> Deny </a>
+	</div>
+{% endblock %}
