@@ -49,31 +49,3 @@ Unit tests are implemented using Django's automated testing and Python `unittest
 ```
 python manage.py test
 ```
-
-
-------------------------
-## CS3450 Phase Deliverables can be found in the /deliverables directory.
-##### Notes:
-* Our README is always located in the outer project folder.
-* Neither the Project Plan or Requirements Definition have changed from Phase 1.
-
-##### Test Users
-**Name:** Demo Superuser  
-**username:** demo_superuser  
-**password:** superuser    
-
-**Name:** Richard Clark  
-**username:** richard.clark65  
-**password:** bootsy65  
-
-**Name:** Marion Andrews  
-**username:** marionws  
-**password:** peacock41  
-
-**Name:** Tina Marshall  
-**username:** tina  
-**password:** apples74  
-
-**Name:** Brandon George  
-**username:** brandongeorge  
-**password:** golden134  
